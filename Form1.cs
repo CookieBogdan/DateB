@@ -402,4 +402,13 @@ namespace DateB
 			Price = pr;
 		}
 	}
+
+	public class Tesst
+	{
+		int Ou { get; set; }
+		public Tesst(int test)
+		{
+			Ou = test;
+		}
+	}
 }
