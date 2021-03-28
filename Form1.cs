@@ -406,9 +406,11 @@ namespace DateB
 	public class Tesst
 	{
 		int Ou { get; set; }
-		public Tesst(int test)
+		private string Name;
+		public Tesst(int test, string n)
 		{
 			Ou = test;
+			Name = n;
 		}
 	}
 }
