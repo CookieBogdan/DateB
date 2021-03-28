@@ -105,9 +105,9 @@ namespace DateB
 			}
 		}
 
-        #region FILTER
-        //ФИЛЬТРАЦИЯ
-        private void filter_Click(object sender, EventArgs e)
+		#region FILTER
+		//ФИЛЬТРАЦИЯ
+		private void filter_Click(object sender, EventArgs e)
 		{
 			//очистка исключений
 			exceptionId.Clear();
@@ -196,10 +196,10 @@ namespace DateB
 				failedMessage(label13, "Что ты хочешь чтоб я стер, а?");
 			}
 		}
-        #endregion
+		#endregion
 
-        #region INSERT
-        private async void insert_Click(object sender, EventArgs e)
+		#region INSERT
+		private async void insert_Click(object sender, EventArgs e)
 		{
 			//заранее чистим предупреждения
 			clearLabel(label7);
@@ -302,10 +302,10 @@ namespace DateB
 				failedMessage(label9, "Где Id, ты хочешь чтоб я всю базу стер?");
 			}
 		}
-        #endregion
+		#endregion
 
-        //выбрать выделенный
-        private void selectDedicated_Click(object sender, EventArgs e)
+		//выбрать выделенный
+		private void selectDedicated_Click(object sender, EventArgs e)
 		{
 			//заранее чистим предупреждения
 			clearLabel(label9);
@@ -368,9 +368,9 @@ namespace DateB
 			l.Text = text;
 		}
 
-        #region CLOSE CONNECTION
-        //закрытие соединения, чтобы не было утечки данных - по кнопке
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		#region CLOSE CONNECTION
+		//закрытие соединения, чтобы не было утечки данных - по кнопке
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
 				sqlConnection.Close();
@@ -383,11 +383,11 @@ namespace DateB
 			if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
 				sqlConnection.Close();
 		}
-        #endregion
-    }
+		#endregion
+	}
 
-    //класс копирующий базу данных
-    public class Product
+	//класс копирующий базу данных
+	public class Product
 	{
 		public int Id { get; set; }
 		public string ProductName { get; set; }
