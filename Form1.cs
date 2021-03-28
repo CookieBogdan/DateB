@@ -105,9 +105,9 @@ namespace DateB
 			}
 		}
 
-        #region FILTER
-        //ФИЛЬТРАЦИЯ
-        private void filter_Click(object sender, EventArgs e)
+		#region FILTER
+		//ФИЛЬТРАЦИЯ
+		private void filter_Click(object sender, EventArgs e)
 		{
 			//очистка исключений
 			exceptionId.Clear();
@@ -152,7 +152,7 @@ namespace DateB
 				updateToolStripMenuItem_Click(sender, e);
 				return;
 			}
-			
+
 			//поиск икслючений
 			var find = from p in products
 					   where !(p.Price <= maxPrice && p.Price >= minPrice) ||
@@ -196,10 +196,10 @@ namespace DateB
 				failedMessage(label13, "Что ты хочешь чтоб я стер, а?");
 			}
 		}
-        #endregion
+		#endregion
 
-        #region INSERT
-        private async void insert_Click(object sender, EventArgs e)
+		#region INSERT
+		private async void insert_Click(object sender, EventArgs e)
 		{
 			//заранее чистим предупреждения
 			clearLabel(label7);
@@ -221,12 +221,12 @@ namespace DateB
 				await command.ExecuteNonQueryAsync();
 
 				//вывод успешного сообщения
-				successfulMessage(label7, "Смастренно!", new List<TextBox> { textBox1, textBox2, textBox7});
+				successfulMessage(label7, "Смастренно!", new List<TextBox> { textBox1, textBox2, textBox7 });
 
 				//перезагрузка таблицы
 				updateToolStripMenuItem_Click(sender, e);
 			}
-			else 
+			else
 			{
 				//вывод провального сообщения
 				failedMessage(label7, "Поля заполни, клоун!");
@@ -241,7 +241,7 @@ namespace DateB
 			clearLabel(label8);
 
 			//проверка на заполненость полей
-			if (!string.IsNullOrEmpty(textBox3.Text) &&!string.IsNullOrWhiteSpace(textBox3.Text) &&
+			if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
 				!string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text) &&
 				!string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
 				!string.IsNullOrEmpty(textBox8.Text) && !string.IsNullOrWhiteSpace(textBox8.Text))
@@ -302,10 +302,10 @@ namespace DateB
 				failedMessage(label9, "Где Id, ты хочешь чтоб я всю базу стер?");
 			}
 		}
-        #endregion
+		#endregion
 
-        //выбрать выделенный
-        private void selectDedicated_Click(object sender, EventArgs e)
+		//выбрать выделенный
+		private void selectDedicated_Click(object sender, EventArgs e)
 		{
 			//заранее чистим предупреждения
 			clearLabel(label9);
@@ -368,9 +368,9 @@ namespace DateB
 			l.Text = text;
 		}
 
-        #region CLOSE CONNECTION
-        //закрытие соединения, чтобы не было утечки данных - по кнопке
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+		#region CLOSE CONNECTION
+		//закрытие соединения, чтобы не было утечки данных - по кнопке
+		private void exitToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
 				sqlConnection.Close();
@@ -383,11 +383,11 @@ namespace DateB
 			if (sqlConnection != null && sqlConnection.State != ConnectionState.Closed)
 				sqlConnection.Close();
 		}
-        #endregion
-    }
+		#endregion
+	}
 
-    //класс копирующий базу данных
-    public class Product
+	//класс копирующий базу данных
+	public class Product
 	{
 		public int Id { get; set; }
 		public string ProductName { get; set; }
