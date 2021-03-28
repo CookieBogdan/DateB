@@ -152,7 +152,7 @@ namespace DateB
 				updateToolStripMenuItem_Click(sender, e);
 				return;
 			}
-			
+
 			//поиск икслючений
 			var find = from p in products
 					   where !(p.Price <= maxPrice && p.Price >= minPrice) ||
@@ -221,12 +221,12 @@ namespace DateB
 				await command.ExecuteNonQueryAsync();
 
 				//вывод успешного сообщения
-				successfulMessage(label7, "Смастренно!", new List<TextBox> { textBox1, textBox2, textBox7});
+				successfulMessage(label7, "Смастренно!", new List<TextBox> { textBox1, textBox2, textBox7 });
 
 				//перезагрузка таблицы
 				updateToolStripMenuItem_Click(sender, e);
 			}
-			else 
+			else
 			{
 				//вывод провального сообщения
 				failedMessage(label7, "Поля заполни, клоун!");
@@ -241,7 +241,7 @@ namespace DateB
 			clearLabel(label8);
 
 			//проверка на заполненость полей
-			if (!string.IsNullOrEmpty(textBox3.Text) &&!string.IsNullOrWhiteSpace(textBox3.Text) &&
+			if (!string.IsNullOrEmpty(textBox3.Text) && !string.IsNullOrWhiteSpace(textBox3.Text) &&
 				!string.IsNullOrEmpty(textBox6.Text) && !string.IsNullOrWhiteSpace(textBox6.Text) &&
 				!string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
 				!string.IsNullOrEmpty(textBox8.Text) && !string.IsNullOrWhiteSpace(textBox8.Text))
