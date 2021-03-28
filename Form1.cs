@@ -402,15 +402,4 @@ namespace DateB
 			Price = pr;
 		}
 	}
-
-	public class Tesst
-	{
-		int Ou { get; set; }
-		private string Name;
-		public Tesst(int test, string n)
-		{
-			Ou = test;
-			Name = n;
-		}
-	}
 }
