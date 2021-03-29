@@ -246,8 +246,20 @@ namespace DateB
 				!string.IsNullOrEmpty(textBox4.Text) && !string.IsNullOrWhiteSpace(textBox4.Text) &&
 				!string.IsNullOrEmpty(textBox8.Text) && !string.IsNullOrWhiteSpace(textBox8.Text))
 			{
-				//задание команды
+				//задание команды 
 				SqlCommand command = new SqlCommand("UPDATE [Products] SET [Name]=@Name, [Volume]=@Volume, [Price]=@Price WHERE [Id]=@Id", sqlConnection);
+
+				//entity framework
+				//1. объявить класс модели
+				//2. провести миграцию:
+				//создать миграцию dotnet ef migration add migration-name
+				//выполнить миграцию dotnet ef database update
+				//3. начать использовать ef в коде
+
+				//var product = dbContext.Products.Select(p => p.Id == ).Single();
+				////update product
+				//await dbContext.SaveDatabaseChangesAsync();
+
 
 				//берем переменные из текстБоксов
 				command.Parameters.AddWithValue("Name", textBox6.Text);
@@ -387,9 +399,12 @@ namespace DateB
 	}
 
 	//класс копирующий базу данных
+	//[Table("Products")]
 	public class Product
 	{
+		//[Key]
 		public int Id { get; set; }
+		//[Required]
 		public string ProductName { get; set; }
 		public int Volume { get; set; }
 		public int Price { get; set; }
